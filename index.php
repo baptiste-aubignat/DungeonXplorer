@@ -6,6 +6,11 @@
         <title>Document</title>
     </head>
     <body>
-        
+        <header>
+            <h1>DungeonXplorer</h1>
+        </header>
+        <footer>
+            <p>&copy; Pixels & Parchemins</p>
+        </footer>
     </body>
 </html>
