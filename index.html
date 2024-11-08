@@ -4,31 +4,52 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DungeonXplorer</title>
-        <link rel="icon" href="images/Logo.png" type="image/icon type">
+        <link rel="icon" href="images/Logo.png" type="image/png">
 
-        <link rel="stylesheet" href="styles/bulma.min.css"></style>
-        <link rel="stylesheet" href="styles/style.css"></style>
+        <link rel="stylesheet" href="styles/bulma.min.css">
+        <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
         <header>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
+            <nav class="navbar" aria-label="main navigation">
+                <div class="navbar-brand pl-6">
                     <a class="navbar-item" href="#">
-                        <figure class="image is-128x128">
-                            <img src="images/Logo.svg" alt="logo DungeonXplorer" class="is-rounded">
+                        <figure class="image">
+                            <img src="images/Logo.png" alt="logo DungeonXplorer" class="is-rounded logo">
                         </figure>
                     </a>
-                
-                    <div class="navbar-menu">
-                        <div class="navbar-start">
-                        <a class="navbar-item" href="#">
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item principal" href="#">
                             Home
                         </a>
+                    </div>
+
+                    <div class="navbar-end pr-6">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button boutonOr">
+                                <strong>Sign up</strong>
+                                </a>
+                                <a class="button is-light">
+                                Log in
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </nav>
         </header>
-        <script type="text/javascript" src="scripts/script.js"></script>
+        <script defer src="scripts/script.js"></script>
     </body>
 </html>

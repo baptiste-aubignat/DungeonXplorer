@@ -1,5 +1,29 @@
 @media (prefers-color-scheme: dark) {
-    html, .navbar {
+    html {
         background: #1A1A1A !important;
     }
+
+    .navbar {
+        background: #2E2E2E !important;
+    }
+
+    .principal {
+        color: #E5E5E5 !important;
+    }
+
+    .secondaire {
+        color: #BFBFBF !important;
+    }
+}
+
+.logo {
+    width: auto !important;
+    height: 64px !important;
+    max-height: none !important;
+    margin-bottom: -25px; /*effet image qui depasse de la navbar*/
+}
+
+.boutonOr {
+    color: #E5E5E5 !important;
+    background: #c4975e !important;
 }
