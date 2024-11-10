@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Lignes en dessous à modifer en fonction de la page-->
-    <meta name="description" content="Histoire dont vous êtes le héros">
-    <title> Page d'inscription sur DungeonXplorer !</title>
+    <meta name="description" content="Page de connexion à DongeonXplorer">
+    <title> Connexion </title>
 
     <link rel="stylesheet" href="styles/style.css">
     <!-- Bulma -->
@@ -21,16 +21,18 @@
 </head>
 
 <body>
-    <section class="section">
+    <div class="section">
         <div class="container" style="max-width: 700px;">
             <div class="column">
 
-                <form class="box">
+                <form class="box boxConnexion">
+
+                    <h1 class="titreConnexion"> Connexion </h1>
 
                     <!--Pseudo ou mail-->
                     <div class="field">
                         <label class="label">Pseudo ou email</label>
-                        <div class="control has-icons-left has-icons-right">
+                        <div class="control has-icons-left">
                             <!--Icone-->
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -52,7 +54,7 @@
                     <!--Mot de passe-->
                     <div class="field">
                         <label class="label">Mot de passe</label>
-                        <div class="control has-icons-left has-icons-right">
+                        <div class="control has-icons-left">
                             <!--Icone-->
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-lock"></i>
@@ -66,16 +68,17 @@
                             <div id="ConnexionMdpValide">
                                 <input class="input" type="password" placeholder="Mot de passe">
                             </div>
+                            <button class="button is-ghost souligne boutonMotDePasseOublie"> Mot de passe oublié </button>
                         </div>
                     </div>
 
 
                     <div class="field is-grouped">
                         <div class="control">
-                            <button class="button is-link">Connexion</button>
+                            <button class="button is-light">Créer un compte</button>
                         </div>
                         <div class="control">
-                            <button class="button is-link is-light">Créer un compte</button>
+                            <button class="button boutonOr">Connexion</button>
                         </div>
                     </div>
                 </form>
@@ -83,7 +86,7 @@
 
             </div>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>
