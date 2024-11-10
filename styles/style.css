@@ -77,13 +77,23 @@ p {
     margin: 100px !important;
 }
 
-
-#ConnexionPseudoOuMailNonValide{
+/* 
+#pseudoOuMailNonValide{
     display: none;
 }
 
 
-#ConnexionMdpNonValide{
+#mdpNonValide{
+    display: none;
+} */
+
+
+#pseudoOuMailValide{
+    display: none;
+}
+
+
+#mdpValide{
     display: none;
 }
 
