@@ -9,11 +9,17 @@
 
     .tprincipal {
         color: #E5E5E5 !important;
+        font-family: "Pirata One", system-ui;
     }
 
     .tsecondaire {
         color: #BFBFBF !important;
+        font-family: "Pirata One", system-ui;
     }
+}
+
+.button {
+    font-family: "Pirata One", system-ui;
 }
 
 .logo {
