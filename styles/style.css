@@ -4,50 +4,8 @@ p {
     font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-    html, .bprincipal {
-        background: #1A1A1A !important;
-    }
-
-    .navbar, .bsecondaire {
-        background: #2E2E2E !important;
-    }
-
-    .tprincipal {
-        color: #E5E5E5 !important;
-        font-family: "Pirata One", system-ui;
-    }
-
-    .tsecondaire {
-        color: #BFBFBF !important;
-        font-family: "Pirata One", system-ui;
-    }
-
-
-}
-
 .button {
     font-family: "Pirata One", system-ui;
-}
-
-.logo {
-    width: auto !important;
-    height: 64px !important;
-    max-height: none !important;
-}
-
-.grand-logo {
-    width: auto !important;
-    height: 128px !important;
-    max-height: none !important;
-}
-
-.aligneBas {
-    margin-bottom: -25px; /*effet image qui depasse de la navbar*/
-}
-
-.aligneHaut {
-    margin-top: -120px; /*effet image qui depasse de la navbar*/
 }
 
 .boutonOr {
@@ -55,29 +13,11 @@ p {
     background: #c4975e !important;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.pt-7 {
-    padding-top: 5rem;
-}
-
-.pt-8 {
-    padding-top: 7rem;
-}
-
-.pt-large {
-    padding-top: 12rem;
-}
-
 .box{
     margin: 100px !important;
 }
 
-/* 
+
 #pseudoOuMailNonValide{
     display: none;
 }
@@ -85,18 +25,7 @@ p {
 
 #mdpNonValide{
     display: none;
-} */
-
-
-#pseudoOuMailValide{
-    display: none;
-}
-
-
-#mdpValide{
-    display: none;
-}
-
+} 
 
 .boxConnexion{
     background: #2E2E2E !important;
