@@ -15,13 +15,6 @@
     </head>
     <body>
         <header>
-<<<<<<< HEAD
-            <h1>DungeonXplorer</h1>
-        </header>
-        <footer>
-            <p>&copy; Pixels & Parchemins</p>
-        </footer>
-=======
             <nav class="navbar" aria-label="main navigation">
                 <div class="navbar-brand pl-6">
                     <a class="navbar-item" href="#">
@@ -94,6 +87,5 @@
             <p>&copy; Pixels & Parchelins 2024</p>
         </footer>
         <script defer src="scripts/script.js"></script>
->>>>>>> idea/experimental
     </body>
 </html>
