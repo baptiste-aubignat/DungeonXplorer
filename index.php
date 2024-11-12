@@ -7,9 +7,10 @@ if (php_sapi_name() === 'cli-server' && is_file($filename)) {
 }
 
 // Require composer autoloader
-require __DIR__ . '/vendor/autoload.php';
+//require __DIR__ . '/vendor/autoload.php';
 
 // Create Router instance
+require_once __DIR__ . '/router/src/Bramus/Router/Router.php';
 $router = new \Bramus\Router\Router();
 
 // Define routes
@@ -24,10 +25,10 @@ $router->run();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DungeonXplorer</title>
-        <link rel="icon" href="images/Logo.png" type="image/png">
+        <link rel="icon" href="/images/Logo.png" type="image/png">
 
-        <link rel="stylesheet" href="styles/bulma.min.css">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="/styles/bulma.min.css">
+        <link rel="stylesheet" href="/styles/style.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -103,6 +104,6 @@ $router->run();
                 </div>
               </div>
         </main>
-        <script defer src="scripts/script.js"></script>
+        <script defer src="/scripts/script.js"></script>
     </body>
 </html>
