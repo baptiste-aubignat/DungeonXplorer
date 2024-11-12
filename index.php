@@ -83,6 +83,9 @@
                 </div>
               </div>
         </main>
+        <footer>
+            <p>&copy; Pixels & Parchelins 2024</p>
+        </footer>
         <script defer src="scripts/script.js"></script>
     </body>
 </html>
