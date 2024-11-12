@@ -12,8 +12,8 @@ Ce projet contient du contenu (images) généré par IA.
 
 ## Auteurs
 
-- [Louisa MEKHELEF]()
-- [Alexis RAGOT]()
+- [Louisa MEKHELEF](https://github.com/LouMek)
+- [Alexis RAGOT](https://github.com/Asriel6)
 - [Baptiste AUBIGNAT](https://github.com/baptiste-aubignat)
 - [Mathéo BRAULT](https://github.com/Idea1000)
 - [Luc BLAISON](https://github.com/blaison160)
