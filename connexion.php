@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-type="dark">
+<html lang="fr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <!--Lignes en dessous à modifer en fonction de la page-->
     <meta name="description" content="Page de connexion à DongeonXplorer">
     <title> Connexion </title>
+    <link rel="icon" href="images/Logo.png" type="image/png">
 
     <link rel="stylesheet" href="styles/style.css">
     <!-- Bulma -->
@@ -18,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
 </head>
 
 <body>
