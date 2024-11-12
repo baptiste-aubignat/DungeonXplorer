@@ -1,15 +1,5 @@
 # DungeonXplorer
 
-<<<<<<< HEAD
-## Lien du projet : 
-
-## Réalisé par
-- [Louisa MEKHELEF]()
-- [Alexis RAGOT]()
-- [Baptiste AUBIGNAT]()
-- [Mathéo BRAULT]()
-- [Luc BLAISON]()
-=======
 :memo: Lien du projet : https://baptiste-aubignat.github.io/DungeonXplorer/
 
 ## Présentation de l'application
@@ -31,4 +21,3 @@ Ce projet contient du contenu (images) généré par IA.
 ## Remerciements
 
 - [Christophe VALLOT](https://github.com/princecorg)
->>>>>>> idea/experimental
