@@ -64,3 +64,10 @@
 .pt-large {
     padding-top: 12rem;
 }
+
+p {
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #E5E5E5;
+}
