@@ -71,3 +71,73 @@ p {
     font-style: normal;
     color: #E5E5E5;
 }
+
+.boutonOr {
+    color: #E5E5E5 !important;
+    background: #c4975e !important;
+}
+
+.box {
+    margin: 100px !important;
+}
+
+#pseudoOuMailNonValide {
+    display: none;
+}
+
+#mdpNonValide {
+    display: none;
+} 
+
+.boxConnexion {
+    background: #2E2E2E !important;
+    box-shadow: none !important;
+    border-radius: 0% !important;
+}
+
+.titreConnexion {
+    font-size: 200%;
+    text-align: center;
+    color: #E5E5E5;
+    font-family: "Pirata One", system-ui;
+
+}
+
+.boutonMotDePasseOublie {
+    text-decoration: underline !important;
+    color: hsla(0, 0%, 100%, 0.41) !important;
+    margin: 0% !important;
+    padding: 0% !important;
+}
+
+.boxMenu {
+    background: #2E2E2E !important;
+    box-shadow: none !important;
+}
+
+.boxMenu > h1 {
+    font-size: 200%;
+    text-align: center;
+    color: #E5E5E5;
+    font-family: "Pirata One", system-ui;
+}
+
+.boxMenu > p {
+    color: #E5E5E5;
+    text-align: center;
+}
+
+.boutons {
+    margin: 15px;
+    text-align: center;
+}
+
+.texte {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.texte > p {
+    color: #E5E5E5;
+    text-align: center;
+}
