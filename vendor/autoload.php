@@ -3,7 +3,8 @@
 spl_autoload_register(function ($class) {
     $directories = array(
         'models/',
-        'controllers/'
+        'controllers/',
+        'router/src/'
     );
 
     foreach ($directories as $directory) {
