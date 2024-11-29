@@ -45,10 +45,10 @@
                     <div class="navbar-end pr-6">
                         <div class="navbar-item">
                             <div class="buttons">
-                                <a class="button boutonOr" href="inscription.php">
+                                <a class="button boutonOr" href="inscriptionUtilisateur.php">
                                     S'inscrire
                                 </a>
-                                <a class="button is-light" href="connexion.php">
+                                <a class="button is-light" href="connexionUtilisateur.php">
                                     Se connecter
                                 </a>
                             </div>
