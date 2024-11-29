@@ -56,3 +56,16 @@ function attaque (force, bonus) {
 function defense (player, bonus) {
   return dee(1, 6) + Math.round(player / 2) + bonus;
 }
+
+/*
+fetch('utility.php', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({data})
+})
+.then(response => response.text())
+.then(result => console.log(result))
+.catch(error => console.error('Error:', error));
+*/
