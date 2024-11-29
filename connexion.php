@@ -107,7 +107,7 @@
                             </div>
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <a class="button is-light" href="Inscription.html">
+                                    <a class="button is-light" href="inscription.php">
                                         Créer un compte
                                     </a>
                                 </div>
