@@ -107,7 +107,9 @@
                             </div>
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <button class="button is-light"><a href="Inscription.html">Créer un compte</a></button>
+                                    <a class="button is-light" href="Inscription.html">
+                                        Créer un compte
+                                    </a>
                                 </div>
                                 <div class="control">
                                     <button class="button boutonOr">Connexion</button>
