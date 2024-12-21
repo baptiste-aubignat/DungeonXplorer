@@ -1,7 +1,3 @@
-<?PHP
-define('BASE_URL', '/DungeonXplorer');
-?>
-
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
     <head>

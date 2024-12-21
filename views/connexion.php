@@ -1,23 +1,3 @@
-<?php
-if (!defined('BASE_URL')) {
-    define('BASE_URL', '/DungeonXplorer');
-}
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-require_once "autoload.php";
-
-$pdo = Database::connect();
-
-
-$controller = new ConnexionModel($pdo);
-if (isset($_POST['envoiConnexion'])) {
-    $controller->login($_POST['pseudoMail'], $_POST['password']);
-    //reinitialisation des mots de passe
-    $_POST['password'] = '';
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
 

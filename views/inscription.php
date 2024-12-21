@@ -1,24 +1,3 @@
-<?php
-if (!defined('BASE_URL')) {
-    define('BASE_URL', '/DungeonXplorer');
-}
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-require_once "autoload.php";
-
-$pdo = Database::connect();
-
-$controller = new InscriptionModel($pdo);
-if (isset($_POST['pseudo'])) {
-    $controller->inscription($_POST['pseudo'], $_POST['password'], $_POST['passwordValid'], $_POST['email']);
-    //reinitialisation des mots de passe
-    $_POST['password'] = '';
-    $_POST['passwordValid'] = '';
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
     <head>

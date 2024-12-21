@@ -1,11 +1,11 @@
 <?php
 
-class AccountModel
+class Account
 {
     public $conn;
 
-    public function __construct($pdo) {
-        $this->conn = $pdo;
+    public function __construct() {
+        $this->conn = Database::connect();
     }
 
     public function getUserByNameOrEmail($pseudo) {
