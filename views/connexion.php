@@ -49,7 +49,7 @@
                             <a class="button boutonOr" href="<?php echo BASE_URL; ?>/inscription">
                                 S'inscrire
                             </a>
-                            <a class="button is-light" href="<?php echo BASE_URL; ?>/afficher_bdd">
+                            <a class="button is-light" href="#">
                                 Se connecter
                             </a>
                         </div>
@@ -115,7 +115,7 @@
                             <button class="button is-light"><a href="<?php echo BASE_URL; ?>/inscription">Créer un compte</a></button>
                         </div>
                         <div class="control">
-                            <button name="envoiConnexion" class="button boutonOr">Connexion</button>
+                            <button name="envoiConnexion" class="button boutonOr"><a href = "<?php echo BASE_URL; ?>/afficher_bdd">Connexion</a></button>
                         </div>
                     </div>
                 </form>
