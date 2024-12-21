@@ -67,7 +67,9 @@
                     </div>
                     <div class="boutons">
                         <button class="button">Rejoindre l'aventure</button>
-                        <button class="button boutonOr">Nouvelle aventure</button>
+                        <a class="button boutonOr" href="<?php echo BASE_URL; ?>/afficher_bdd">
+                            Nouvelle aventure
+                        </a>
                     </div>
                 </div>
             </div>
