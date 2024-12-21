@@ -49,7 +49,7 @@
                             <a class="button boutonOr" href="<?php echo BASE_URL; ?>/inscription">
                                 S'inscrire
                             </a>
-                            <a class="button is-light" href="#">
+                            <a class="button is-light" href="<?php echo BASE_URL; ?>/afficher_bdd">
                                 Se connecter
                             </a>
                         </div>
