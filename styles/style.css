@@ -81,7 +81,7 @@ p {
     margin: 100px !important;
 }
 
-#pseudoOuMailNonValide {
+.pseudoOuMailNonValide {
     display: none;
 }
 

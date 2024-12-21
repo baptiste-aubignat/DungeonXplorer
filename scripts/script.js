@@ -19,15 +19,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
   });
-
-function dee () {
-  return Math.floor(Math.random()*6+1)%7;
-}
-
-function initiative (initiative) {
-  return dee() + initiative;
-}
-
-function attaque (force, bonus) {
-  return dee() + force + bonus;
-}
