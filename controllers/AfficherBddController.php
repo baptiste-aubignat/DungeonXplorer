@@ -4,11 +4,16 @@ class AfficherBddController{
 
         $conn = Database::connect();
 
-        $query = "SELECT * FROM Monster";
+        $query = "SELECT * FROM Chapter";
         $stmt = $conn->prepare($query);
         $stmt->execute();
+        $recu = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<br> " . $recu['content'] . "<br>";
+        }
+
         
-        echo $stmt->fetch(PDO::FETCH_ASSOC)['name'];
 
         if (!defined('BASE_URL')) {
             define('BASE_URL', '/DungeonXplorer');
