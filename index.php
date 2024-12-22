@@ -55,6 +55,36 @@ $router->addRoute('menu', 'MenuController@index');
 $router->addRoute('inscription', 'InscriptionController@index');
 $router->addRoute('connexion', 'ConnexionController@index');
 $router->addRoute('afficher_bdd', 'AfficherBddController@index');
+// Ajout de tous les chapitres (miam)
+$router->addRoute('chapitre_1', 'chapitre_1@index');
+$router->addRoute('chapitre_2', 'chapitre_2@index');
+$router->addRoute('chapitre_3', 'chapitre_3@index');
+$router->addRoute('chapitre_4', 'chapitre_4@index');
+$router->addRoute('chapitre_5', 'chapitre_5@index');
+$router->addRoute('chapitre_6', 'chapitre_6@index');
+$router->addRoute('chapitre_7', 'chapitre_7@index');
+$router->addRoute('chapitre_8', 'chapitre_8@index');
+$router->addRoute('chapitre_9', 'chapitre_9@index');
+$router->addRoute('chapitre_10', 'chapitre_10@index');
+$router->addRoute('chapitre_11', 'chapitre_11@index');
+$router->addRoute('chapitre_12', 'chapitre_12@index');
+$router->addRoute('chapitre_13', 'chapitre_13@index');
+$router->addRoute('chapitre_14', 'chapitre_14@index');
+$router->addRoute('chapitre_15', 'chapitre_15@index');
+$router->addRoute('chapitre_16', 'chapitre_16@index');
+$router->addRoute('chapitre_17', 'chapitre_17@index');
+$router->addRoute('chapitre_18', 'chapitre_18@index');
+$router->addRoute('chapitre_19', 'chapitre_19@index');
+$router->addRoute('chapitre_20', 'chapitre_20@index');
+$router->addRoute('chapitre_21', 'chapitre_21@index');
+$router->addRoute('chapitre_22', 'chapitre_22@index');
+$router->addRoute('chapitre_23', 'chapitre_23@index');
+$router->addRoute('chapitre_24', 'chapitre_24@index');
+$router->addRoute('chapitre_25', 'chapitre_25@index');
+$router->addRoute('chapitre_26', 'chapitre_26@index');
+$router->addRoute('chapitre_27', 'chapitre_27@index');
+$router->addRoute('chapitre_28', 'chapitre_28@index');
+
 
 // Appel de la méthode route
 $router->route(trim($_SERVER['REQUEST_URI'], '/'));
