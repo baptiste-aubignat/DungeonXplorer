@@ -55,6 +55,7 @@ $router->addRoute('menu', 'MenuController@index');
 $router->addRoute('inscription', 'InscriptionController@index');
 $router->addRoute('connexion', 'ConnexionController@index');
 $router->addRoute('afficher_bdd', 'AfficherBddController@index');
+$router->addRoute('profile', 'ProfileController@index');
 
 // Appel de la méthode route
 $router->route(trim($_SERVER['REQUEST_URI'], '/'));
