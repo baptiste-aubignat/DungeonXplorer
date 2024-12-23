@@ -85,6 +85,8 @@ $router->addRoute('chapitre_26', 'chapitre_26@index');
 $router->addRoute('chapitre_27', 'chapitre_27@index');
 $router->addRoute('chapitre_28', 'chapitre_28@index');
 
+$router->addRoute('profile', 'ProfileController@index');
+$router->addRoute('logout', 'LogoutController@index');
 
 // Appel de la méthode route
 $router->route(trim($_SERVER['REQUEST_URI'], '/'));

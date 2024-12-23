@@ -1,9 +1,9 @@
 <?php
 class InscriptionController {
-    private $accountModel;
+    private $conn;
 
     public function __construct() {
-        $this->accountModel = new Account();
+        $this->conn = Database::connect();
     }
 
     public function inscription($user, $pass, $passValid, $email){
@@ -19,8 +19,9 @@ class InscriptionController {
             $email = htmlspecialchars($email);
     
     
-            $insertUser = $this->accountModel->conn->prepare("INSERT INTO Account(name, email, password) VALUES(?, ?, ?)");
+            $insertUser = $this->conn->prepare("INSERT INTO Account(name, email, password) VALUES(?, ?, ?)");
             $insertUser->execute(array($pseudo, $email, $password));
+            $_SESSION['user'] = $pseudo;
         } else {
             Utility::alert("Merci de completer tous les champs");
         }
@@ -31,6 +32,10 @@ class InscriptionController {
         }
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
+            if (isset($_SESSION["user"])) {
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."/menu';</script>";
+                die();
+            }
         }
         
         $controller = new InscriptionController();
