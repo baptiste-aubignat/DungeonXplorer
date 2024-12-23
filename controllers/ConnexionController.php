@@ -42,8 +42,7 @@ class ConnexionController {
 
         
         if (isset($_POST['envoiConnexion'])) {
-            $controller = new ConnexionController();
-            $controller->connexion($_POST['pseudoMail'], $_POST['password']);
+            $this->connexion($_POST['pseudoMail'], $_POST['password']);
             //reinitialisation des mots de passe
             $_POST['password'] = '';
         }
