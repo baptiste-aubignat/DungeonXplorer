@@ -22,33 +22,10 @@ class Router
     }
 
     public function route($url) {
-        /*
-        // Suppression du préfixe du début de l'URL
-        if ($this->prefix && strpos($url, $this->prefix) === 0) {
-            $url = substr($url, strlen($this->prefix) + 1);
-        }
-
-        // Suppression des barres obliques en trop
-        $url = trim($url, '/');
-
-        // Vérification de la correspondance de l'URL à une route définie
-        if (array_key_exists($url, $this->routes)) {
-            // Extraction du nom du contrôleur et de la méthode
-            list($controllerName, $methodName) = explode('@', $this->routes[$url]);
-
-            // Instanciation du contrôleur et appel de la méthode
-            $controller = new $controllerName();
-            $controller->$methodName();
-        } else {
-            // Gestion des erreurs (page 404, etc.)
-            echo '<h2>la page demandée n\'existe pas</h2>';
-        }*/
-        // Retirer le préfixe de l'URL si nécessaire
         if ($this->prefix && strpos($url, $this->prefix) === 0) {
             $url = substr($url, strlen($this->prefix));
         }
 
-        // Supprimer les barres obliques en trop
         $url = trim($url, '/');
 
         foreach ($this->routes as $route => $action) {
