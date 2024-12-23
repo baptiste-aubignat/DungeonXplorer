@@ -14,8 +14,8 @@
     </div>
     <div class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>">
-                Home
+            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/menu">
+                Menu
             </a>
         </div>
         <div class="navbar-end pr-6">
