@@ -23,6 +23,7 @@
                 <div class="notification bsecondaire has-text-centered">
                     <p>pseudo : <?php echo PROFILE->getPseudo($_SESSION["user"]); ?></p>
                     <p>adresse mail : <?php echo PROFILE->getAddresseMail($_SESSION["user"]); ?></p>
+                    <a href="<?php echo BASE_URL; ?>/logout" class="button is-danger">Déconnexion</a>
                 </div>
               </div>
         </main>
