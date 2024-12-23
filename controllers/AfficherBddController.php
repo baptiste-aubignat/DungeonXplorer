@@ -1,0 +1,29 @@
+<?php
+class AfficherBddController{
+    function index(){
+
+        $conn = Database::connect();
+
+        $query = "SELECT * FROM Chapter";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $recu = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<br> " . $recu['content'] . "<br>";
+        }
+
+        
+
+        if (!defined('BASE_URL')) {
+            define('BASE_URL', '/DungeonXplorer');
+        }
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        require_once 'views/afficher_bdd.php';
+
+        
+    }
+}
+

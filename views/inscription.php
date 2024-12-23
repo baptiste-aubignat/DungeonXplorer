@@ -145,9 +145,7 @@
                                     <button class="button is-light">Créer</button>
                                 </div>
                                 <div class="control">
-                                    <a class="button boutonOr" href="<?php echo BASE_URL; ?>/">
-                                        Annuler
-                                    </a>
+                                    <a class="button boutonOr" href="<?php echo BASE_URL; ?>">Annuler</a>
                                 </div>
                             </div>
                         </form>

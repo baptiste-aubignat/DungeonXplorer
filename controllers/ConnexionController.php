@@ -13,7 +13,7 @@ class ConnexionController {
 
             if ($user) {
                 if ($pass === $user['password']) {
-                    $_SESSION['user'] = $user; // Enregistre l'utilisateur dans la session
+                    $_SESSION['user'] = $user["name"]; // Enregistre l'utilisateur dans la session
                     Utility::alert("Connexion établie");
                     return true;
                 } else {
@@ -34,11 +34,15 @@ class ConnexionController {
         }
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
+            if (isset($_SESSION["user"])) {
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."/menu';</script>";
+                die();
+            }
         }
 
-        $controller = new ConnexionController();
+        
         if (isset($_POST['envoiConnexion'])) {
-            $controller->connexion($_POST['pseudoMail'], $_POST['password']);
+            $this->connexion($_POST['pseudoMail'], $_POST['password']);
             //reinitialisation des mots de passe
             $_POST['password'] = '';
         }

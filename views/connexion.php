@@ -49,7 +49,7 @@
                             <a class="button boutonOr" href="<?php echo BASE_URL; ?>/inscription">
                                 S'inscrire
                             </a>
-                            <a class="button is-light" href="<?php echo BASE_URL; ?>/afficher_bdd">
+                            <a class="button is-light" href="#">
                                 Se connecter
                             </a>
                         </div>
@@ -111,22 +111,14 @@
 
 
                     <div class="field is-grouped">
-                        <div class="buttons">
-                            <div class="control">
-                                <a class="button is-light" href="<?php echo BASE_URL; ?>/inscription">
-                                    Créer un compte
-                                </a>
-                            </div>
-                            <div class="control">
-                                <a class="button boutonOr" href="<?php echo BASE_URL; ?>/menu">
-                                    Connexion
-                                </a>
-                            </div>
+                        <div class="control">
+                            <button class="button is-light"><a href="<?php echo BASE_URL; ?>/inscription">Créer un compte</a></button>
+                        </div>
+                        <div class="control">
+                            <button class="button boutonOr" name="envoiConnexion" ><a href = "<?php echo BASE_URL; ?>/ChapterViews/chapitre_1">Connexion</a></button>
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
     </div>
