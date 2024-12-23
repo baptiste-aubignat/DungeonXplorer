@@ -21,8 +21,8 @@ class Router
         $this->routes[trim($uri, '/')] = $controllerMethod;
     }
 
-    public function route($url)
-    {
+    public function route($url) {
+        /*
         // Suppression du préfixe du début de l'URL
         if ($this->prefix && strpos($url, $this->prefix) === 0) {
             $url = substr($url, strlen($this->prefix) + 1);
@@ -42,7 +42,33 @@ class Router
         } else {
             // Gestion des erreurs (page 404, etc.)
             echo '<h2>la page demandée n\'existe pas</h2>';
+        }*/
+        // Retirer le préfixe de l'URL si nécessaire
+        if ($this->prefix && strpos($url, $this->prefix) === 0) {
+            $url = substr($url, strlen($this->prefix));
         }
+
+        // Supprimer les barres obliques en trop
+        $url = trim($url, '/');
+
+        foreach ($this->routes as $route => $action) {
+            $pattern = preg_replace('#\{([a-zA-Z_]+)\}#', '([^/]+)', $route);
+            $pattern = "#^" . $pattern . "$#";
+
+            if (preg_match($pattern, $url, $matches)) {
+                array_shift($matches);
+
+                [$controller, $method] = explode('@', $action);
+
+                if (class_exists($controller) && method_exists($controller, $method)) {
+                    $instance = new $controller();
+                    return call_user_func_array([$instance, $method], $matches);
+                }
+            }
+        }
+
+        http_response_code(404);
+        echo "<h2>La page demandée n'existe pas</h2>";
     }
 }
 
@@ -56,34 +82,8 @@ $router->addRoute('inscription', 'InscriptionController@index');
 $router->addRoute('connexion', 'ConnexionController@index');
 $router->addRoute('afficher_bdd', 'AfficherBddController@index');
 // Ajout de tous les chapitres (miam)
-$router->addRoute('chapitre_1', 'chapitre_1@index');
-$router->addRoute('chapitre_2', 'chapitre_2@index');
-$router->addRoute('chapitre_3', 'chapitre_3@index');
-$router->addRoute('chapitre_4', 'chapitre_4@index');
-$router->addRoute('chapitre_5', 'chapitre_5@index');
-$router->addRoute('chapitre_6', 'chapitre_6@index');
-$router->addRoute('chapitre_7', 'chapitre_7@index');
-$router->addRoute('chapitre_8', 'chapitre_8@index');
-$router->addRoute('chapitre_9', 'chapitre_9@index');
-$router->addRoute('chapitre_10', 'chapitre_10@index');
-$router->addRoute('chapitre_11', 'chapitre_11@index');
-$router->addRoute('chapitre_12', 'chapitre_12@index');
-$router->addRoute('chapitre_13', 'chapitre_13@index');
-$router->addRoute('chapitre_14', 'chapitre_14@index');
-$router->addRoute('chapitre_15', 'chapitre_15@index');
-$router->addRoute('chapitre_16', 'chapitre_16@index');
-$router->addRoute('chapitre_17', 'chapitre_17@index');
-$router->addRoute('chapitre_18', 'chapitre_18@index');
-$router->addRoute('chapitre_19', 'chapitre_19@index');
-$router->addRoute('chapitre_20', 'chapitre_20@index');
-$router->addRoute('chapitre_21', 'chapitre_21@index');
-$router->addRoute('chapitre_22', 'chapitre_22@index');
-$router->addRoute('chapitre_23', 'chapitre_23@index');
-$router->addRoute('chapitre_24', 'chapitre_24@index');
-$router->addRoute('chapitre_25', 'chapitre_25@index');
-$router->addRoute('chapitre_26', 'chapitre_26@index');
-$router->addRoute('chapitre_27', 'chapitre_27@index');
-$router->addRoute('chapitre_28', 'chapitre_28@index');
+$router->addRoute('chapitre', 'ChapitreController@index');
+$router->addRoute('chapitre/{id}', 'ChapitreController@index');
 
 $router->addRoute('profile', 'ProfileController@index');
 $router->addRoute('logout', 'LogoutController@index');

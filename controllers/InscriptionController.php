@@ -38,9 +38,8 @@ class InscriptionController {
             }
         }
         
-        $controller = new InscriptionController();
         if (isset($_POST['pseudo'])) {
-            $controller->inscription($_POST['pseudo'], $_POST['password'], $_POST['passwordValid'], $_POST['email']);
+            $this->inscription($_POST['pseudo'], $_POST['password'], $_POST['passwordValid'], $_POST['email']);
             //reinitialisation des mots de passe
             $_POST['password'] = '';
             $_POST['passwordValid'] = '';
