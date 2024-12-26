@@ -6,9 +6,9 @@ class ConnexionController {
         $this->accountModel = new Account();
     }
 
-    public function connexion($user, $pass) {
-        if (!empty($user) && !empty($pass)) {
-            $user = $this->accountModel->getUserByNameOrEmail($user);
+    public function connexion($name, $pass) {
+        if (!empty($name) && !empty($pass)) {
+            $user = $this->accountModel->getUserByNameOrEmail($name);
             $pass = sha1($pass);
 
             if ($user) {

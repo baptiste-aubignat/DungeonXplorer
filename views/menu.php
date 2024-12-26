@@ -38,9 +38,11 @@
                             Poursuivez une aventure déjà commencée ou bien commencez-en une nouvelle !
                         </p>
                     </div>
-                    <div class="boutons">
-                        <button class="button">Rejoindre l'aventure</button>
-                        <button class="button boutonOr">Nouvelle aventure</button>
+
+                    <div class="fixed-grid has-4-cols">
+                        <div class="grid">
+                            <?php THIS->listHero($_SESSION["user"]);?>
+                        </div>
                     </div>
                 </div>
             </div>

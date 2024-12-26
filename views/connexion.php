@@ -115,7 +115,7 @@
                             <button class="button is-light"><a href="<?php echo BASE_URL; ?>/inscription">Créer un compte</a></button>
                         </div>
                         <div class="control">
-                            <button class="button boutonOr" name="envoiConnexion" ><a href = "<?php echo BASE_URL; ?>/ChapterViews/chapitre_1">Connexion</a></button>
+                            <button class="button boutonOr" name="envoiConnexion" >Connexion</button>
                         </div>
                     </div>
                 </form>

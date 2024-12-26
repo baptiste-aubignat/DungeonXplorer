@@ -29,5 +29,12 @@ class Account
         }
         return $this->info['email'];
     }
+
+    public function getHero($pseudo) {
+        $query = "select * from presentation_hero where pseudo = '".$pseudo."';";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
 }
 ?>
