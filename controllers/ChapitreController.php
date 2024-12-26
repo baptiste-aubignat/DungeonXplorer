@@ -2,18 +2,21 @@
 class ChapitreController {
 
     public $nbChap;
+    public $conn;
+
+    public function __construct() {
+        $this->conn = Database::connect();
+    }
 
     public function setNbChap($id) {
         $this->nbChap = $id;
     }
 
     public function getChap() {
-        $conn = Database::connect();
-
         echo "<figure class='image'><img src='".BASE_URL."/images/Chapitre_".$this->nbChap.".png' alt='image du chapitre ".$this->nbChap."'></figure>";
 
         $query = "SELECT * FROM Chapter where chapter_id = ".$this->nbChap.";";
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
         echo "<br>";
@@ -30,10 +33,8 @@ class ChapitreController {
     }
 
     public function getSuite() {
-        $conn = Database::connect();
-
         $query = "SELECT * FROM Links where chapter_id = ".$this->nbChap.";";
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
         $suiteExiste = false;
@@ -47,7 +48,7 @@ class ChapitreController {
     }
 
 
-    public function index($id=0) {
+    public function index() {
         if (!defined('BASE_URL')) {
             define('BASE_URL', '/DungeonXplorer');
         }
@@ -55,7 +56,10 @@ class ChapitreController {
             session_start();
         }
         define('CHAP', $this);
-        $this->setNbChap($id);
-        require_once 'views/chapitre.php';
+        $query = "select h.chapter_id from Hero h join Hero_list hl on hl.hero_id = h.hero_id join Account a on a.account_id = hl.account_id where a.name = '".$_SESSION["user"]."' and h.name = '".$_SESSION["hero"]."';";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $this->setNbChap($stmt->fetch(PDO::FETCH_ASSOC)["chapter_id"]);
+        require_once 'views/part/chapitre.php';
     }
 }

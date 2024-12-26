@@ -5,7 +5,7 @@
     Nous sommes ravi de vous revoir sur DungeonXplorer !
 </p>
 <div class="buttons center pt-5">
-    <a class="button boutonOr mr-3 is-medium" href="<?php echo BASE_URL; ?>/hero/selection">
-        Invoquer un héro
+    <a class="button boutonOr mr-3 is-medium" href="<?php echo BASE_URL; ?>/play">
+        Jouer
     </a>
 </div>

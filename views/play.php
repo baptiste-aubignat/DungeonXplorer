@@ -17,11 +17,15 @@
             <?PHP require_once("part/header.php"); ?>
         </header>
         <main>
-            <div class="container pt-large px-5">
-                <div class="notification bsecondaire has-text-centered">
-                    Ici vos chapitre
-                </div>
-              </div>
+            <?php
+                if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
+                    //pass
+                } else {
+                    $content = new ChapitreController();
+                }
+                $content->index();
+            ?>
+            <br><br>
         </main>
         <footer>
             <?PHP require_once("part/footer.php"); ?>
