@@ -21,43 +21,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
 
-    <body>
-        <header>
-            <nav class="navbar" aria-label="main navigation">
-                <div class="navbar-brand pl-6">
-                    <a class="navbar-item" href="<?php echo BASE_URL; ?>">
-                        <figure class="image">
-                            <img src="images/Logo.png" alt="logo DungeonXplorer" class="is-rounded logo aligneBas">
-                        </figure>
-                    </a>
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>">
-                            Home
-                        </a>
-                    </div>
-                    <div class="navbar-end pr-6">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="button boutonOr" href="<?php echo BASE_URL; ?>/inscription">
-                                    S'inscrire
-                                </a>
-                                <a class="button is-light" href="#">
-                                    Se connecter
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+<body>
+    <header>
+        <?PHP require_once("part/headerOff.php"); ?>
+    </header>
         <div class="section">
             <div class="container" style="max-width: 700px;">
                 <div class="column">
@@ -108,27 +75,17 @@
                                 <button class="button is-ghost souligne boutonMotDePasseOublie"> Mot de passe oublié </button>
                             </div>
                         </div>
-                        <div class="field is-grouped">
-                            <div class="buttons">
-                                <div class="control">
-                                    <a class="button is-light" href="<?php echo BASE_URL; ?>/inscription">
-                                        Créer un compte
-                                    </a>
-                                </div>
-                                <div class="control">
-                                    <a class="button boutonOr" name="envoiConnexion" href="<?php echo BASE_URL; ?>/menu">
-                                        Connexion
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="control">
+                            <button class="button boutonOr" name="envoiConnexion" >Connexion</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <footer>
-            <p>&copy; Pixels & Parchemins 2024</p>
-        </footer>
-        <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
-    </body>
+    </div>
+    <footer>
+        <?PHP require_once("part/footer.php"); ?>
+    </footer>
+    <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
+</body>
 </html>

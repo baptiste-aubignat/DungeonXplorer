@@ -54,16 +54,18 @@ $router = new Router('DungeonXplorer');
 
 // Ajout des routes
 $router->addRoute('', 'HomeController@index');
-$router->addRoute('menu', 'MenuController@index');
-$router->addRoute('inscription', 'InscriptionController@index');
-$router->addRoute('connexion', 'ConnexionController@index');
+$router->addRoute('hero/selection', 'MenuController@index');
+$router->addRoute('hero/create', 'HeroCreatorController@index');
+
 $router->addRoute('afficher_bdd', 'AfficherBddController@index');
-// Ajout de tous les chapitres (miam)
+
 $router->addRoute('chapitre', 'ChapitreController@index');
 $router->addRoute('chapitre/{id}', 'ChapitreController@index');
 
-$router->addRoute('profile', 'ProfileController@index');
-$router->addRoute('logout', 'LogoutController@index');
+$router->addRoute('account/inscription', 'InscriptionController@index');
+$router->addRoute('account/connexion', 'ConnexionController@index');
+$router->addRoute('account/profile', 'ProfileController@index');
+$router->addRoute('account/logout', 'LogoutController@index');
 $router->addRoute('fight', 'fightsController@index');
 
 // Appel de la méthode route
