@@ -34,10 +34,11 @@
                 <div class="notification bsecondaire has-text-centered">
                     <h1 class="is-size-2 pirata">Créateur de personnage</h1>
                     <br>
-                    <form>
+                    <form id="creationHero" action="<?php echo BASE_URL; ?>/hero/selection" method="POST">
                         <label for="nom" class="pirata">nom personnage</label>
                         <input id="nom" type="text">
                         <?php THIS->getClass(); ?>
+                        <input type="submit" value="créer">
                     </form>
                 </div>
             </div>

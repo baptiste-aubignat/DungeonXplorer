@@ -27,7 +27,7 @@ class HeroCreatorController {
         echo "<br>";
         echo "<br>";
         while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<input type='radio' id='".$recu["name"]."' name='class' value='".$recu["class_id"]."'>";
+            echo "<input type='radio' id='".$recu["name"]."' name='classe' value='".$recu["class_id"]."'>";
             echo "<label for='".$recu["name"]."'>".$recu["name"]."</label>";
             echo "<br>";
         }
