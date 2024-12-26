@@ -14,7 +14,7 @@
 
     .tsecondaire {
         color: #BFBFBF !important;
-        font-family: "Pirata One", system-ui;
+        font-family: "Roboto", system-ui;
     }
 }
 
@@ -154,4 +154,8 @@ footer {
     background-color: #2E2E2E;
     padding: 5px;
     bottom: 0;
+}
+
+.pirata {
+    font-family: "Pirata One", system-ui;
 }

@@ -16,9 +16,9 @@
     <header>
             <?PHP
                 if (isset($_SESSION["user"])) {
-                    require_once("header.php");
+                    require_once("part/header.php");
                 } else {
-                    require_once("headerOff.php");
+                    require_once("part/headerOff.php");
                 }
             ?>
         </header>

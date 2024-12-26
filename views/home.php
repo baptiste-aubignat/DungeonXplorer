@@ -16,9 +16,9 @@
         <header>
             <?PHP
                 if (isset($_SESSION["user"])) {
-                    require_once("header.php");
+                    require_once("part/header.php");
                 } else {
-                    require_once("headerOff.php");
+                    require_once("part/headerOff.php");
                 }
             ?>
         </header>
@@ -28,23 +28,13 @@
                     <figure class="image pb-3">
                         <img src="<?php echo BASE_URL; ?>/images/Logo.png" alt="logo DungeonXplorer" class="is-rounded grand-logo aligneHaut center">
                     </figure>
-                    <h1 class="tprincipal pb-1 is-size-3 is-size-4-mobile has-text-weight-bold">
-                        Bienvenue sur DungeonXplorer
-                    </h1>
-                    <p class="tsecondaire is-size-5-desktop is-size-6-tablet is-size-7-mobile px-4 has-text-justified">
-                        Votre portail vers un monde de dark fantasy, où chaque choix vous rapproche un peu plus des ténèbres... ou de la lumière. 
-                        Plongez dans un univers impitoyable inspiré des classiques du "livre dont vous êtes le héros" : ici, chaque décision compte et peut être votre dernière. 
-                        En naviguant dans les couloirs sombres et les donjons maudits, vous devrez faire preuve de stratégie, de courage et d'un peu de folie pour survivre aux épreuves qui vous attendent. 
-                        Créatures redoutables, énigmes mortelles et trésors interdits jalonnent votre chemin... Saurez-vous percer les secrets de DungeonXplorer ? Préparez-vous à écrire votre propre légende... ou à devenir une autre âme perdue dans les profondeurs.
-                    </p>
-                    <div class="buttons center pt-5">
-                        <a class="button boutonOr mr-3 is-medium" href="<?php echo BASE_URL; ?>/inscription">
-                            Rejoindre l'Ordre des Aventuriers
-                        </a>
-                        <a class="button is-light is-medium" href="<?php echo BASE_URL; ?>/connexion">
-                            Poursuivre votre Destinée
-                        </a>
-                    </div>
+                    <?php 
+                        if (isset($_SESSION["user"])) {
+                            require_once("part/home.php");
+                        } else {
+                            require_once("part/homeOff.php");
+                        }
+                    ?>
                 </div>
               </div>
         </main>

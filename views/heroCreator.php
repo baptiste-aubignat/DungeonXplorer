@@ -23,16 +23,22 @@
         <header>
             <?PHP
                 if (isset($_SESSION["user"])) {
-                    require_once("header.php");
+                    require_once("part/header.php");
                 } else {
-                    require_once("headerOff.php");
+                    require_once("part/headerOff.php");
                 }
             ?>
         </header>
         <main>
-            <div class="container">
-                <div class="box boxMenu">
-                    <h1>Créateur de personnage</h1>
+            <div class="container pt-large px-5">
+                <div class="notification bsecondaire has-text-centered">
+                    <h1 class="is-size-2 pirata">Créateur de personnage</h1>
+                    <br>
+                    <form>
+                        <label for="nom" class="pirata">nom personnage</label>
+                        <input id="nom" type="text">
+                        <?php THIS->getClass(); ?>
+                    </form>
                 </div>
             </div>
         </main>
