@@ -244,6 +244,7 @@ class fightsController{
                         if (isset($_POST['valeurPotion'])) {
                             $choixPotion = (int)$_POST['valeurPotion']; // Convertir en entier
                             //Actualisation PV ou Mana
+                            echo $choixPotion;
                             if($choixPotion <= 4 && $choixPotion >= 1){
                                 $conn2 = Database::connect();
                                 $query2 = "SELECT heal_amount from Potion p where item_id in (select item_id from Inventory i where item_id = $choixPotion)";
@@ -252,6 +253,12 @@ class fightsController{
                                 $recu2 = $stmt2->fetch(PDO::FETCH_ASSOC);
                                 $hero->pv += $recu2['heal_amount'];
                                 echo "<br>" . "Potion bue ! : " . $recu2['heal_amount'] . " PV restaurés";
+
+                                //Actualisation dans la base
+                                $query4 = "UPDATE Inventory set quantity = $recu['quantity'] - 1 where item_id = $choixPotion";
+                                $stmt4 = $conn3->prepare($query4);
+                                $stmt4->execute();
+
                             } elseif($choixPotion <= 8 && $choixPotion >= 5) {
                                 $conn3 = Database::connect();
                                 $query3 = "SELECT mana_recovery from Potion p where item_id in (select item_id from Inventory i where item_id = $choixPotion)";
@@ -260,6 +267,11 @@ class fightsController{
                                 $recu3 = $stmt3->fetch(PDO::FETCH_ASSOC);
                                 $hero->mana += $recu3['mana_recovery'];
                                 echo "<br>" . "Potion bue ! : " . $recu3['mana_amount'] . " Mana restaurés";
+
+                                //Actualisation dans la base
+                                $query4 = "UPDATE Inventory set quantity = $recu['quantity'] - 1 where item_id = $choixPotion";
+                                $stmt4 = $conn3->prepare($query4);
+                                $stmt4->execute();
                             }
         
                             // Vérifier si la valeurPotion est bonne
@@ -271,11 +283,11 @@ class fightsController{
                             echo "Merci de rentrer une valeur";
                         }
                     }
-                // Vérifier si la valeur est comprise entre 1 et 3
-                if (!($choix >= 1 && $choix <= 3)) {
-                    echo "Erreur : La valeur doit être comprise entre 1 et 3.<br>";
-                    $choix = -1;
-                }
+                // // Vérifier si la valeur est comprise entre 1 et 3
+                // if (!($choix >= 1 && $choix <= 3)) {
+                //     echo "Erreur : La valeur doit être comprise entre 1 et 3.<br>";
+                //     $choix = -1;
+                // }
             } else {
                 echo "Erreur : Aucun champ n'a été soumis.<br>";
             }
