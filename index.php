@@ -66,6 +66,7 @@ $router->addRoute('account/inscription', 'InscriptionController@index');
 $router->addRoute('account/connexion', 'ConnexionController@index');
 $router->addRoute('account/profile', 'ProfileController@index');
 $router->addRoute('account/logout', 'LogoutController@index');
+$router->addRoute('fight', 'fightsController@index');
 
 // Appel de la méthode route
 $router->route(trim($_SERVER['REQUEST_URI'], '/'));
