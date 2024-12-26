@@ -22,11 +22,7 @@
     <body>
         <header>
             <?PHP
-                if (isset($_SESSION["user"])) {
-                    require_once("header.php");
-                } else {
-                    require_once("headerOff.php");
-                }
+                require_once("part/header.php");
             ?>
         </header>
         <main>
@@ -38,17 +34,16 @@
                             Poursuivez une aventure déjà commencée ou bien commencez-en une nouvelle !
                         </p>
                     </div>
-                    <div class="boutons">
-                        <button class="button">Rejoindre l'aventure</button>
-                        <a class="button boutonOr" href="<?php echo BASE_URL; ?>/ChapterViews/chapitre_1">
-                            Nouvelle aventure
-                        </a>
+                    <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop has-5-cols-widescreen">
+                        <div class="grid">
+                            <?php THIS->listHero($_SESSION["user"]);?>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <footer>
-            <p>&copy; Pixels & Parchemins 2024</p>
+            <?PHP require_once("part/footer.php"); ?>
         </footer>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
     </body>

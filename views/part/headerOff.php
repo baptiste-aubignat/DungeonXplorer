@@ -21,10 +21,10 @@
         <div class="navbar-end pr-6">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button boutonOr" href="<?php echo BASE_URL; ?>/inscription">
+                    <a class="button boutonOr" href="<?php echo BASE_URL; ?>/account/inscription">
                     S'inscrire
                     </a>
-                    <a class="button is-light" href="<?php echo BASE_URL; ?>/connexion">
+                    <a class="button is-light" href="<?php echo BASE_URL; ?>/account/connexion">
                     Se connecter
                     </a>
                 </div>
