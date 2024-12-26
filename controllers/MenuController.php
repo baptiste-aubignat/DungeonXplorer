@@ -76,7 +76,7 @@ class MenuController {
         $hero = $this->account->getHero($pseudo);
         while ($recu = $hero->fetch(PDO::FETCH_ASSOC)) {
             echo "
-                <a class='cell'>
+                <a class='cell choixHero'>
                     <div class='card'>
                         <div class='card-image'>
                             <figure class='image'>
