@@ -39,7 +39,7 @@
               </div>
         </main>
         <footer>
-            <p>&copy; Pixels & Parchemins 2024</p>
+            <?PHP require_once("part/footer.php"); ?>
         </footer>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
     </body>

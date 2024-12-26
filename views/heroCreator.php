@@ -35,16 +35,16 @@
                     <h1 class="is-size-2 pirata">Créateur de personnage</h1>
                     <br>
                     <form id="creationHero" action="<?php echo BASE_URL; ?>/hero/selection" method="POST">
-                        <label for="nom" class="pirata">nom personnage</label>
-                        <input id="nom" type="text">
+                        <label for="nom" class="tprincipal">nom personnage</label>
+                        <input id="nom" type="text" name="nom">
                         <?php THIS->getClass(); ?>
-                        <input type="submit" value="créer">
+                        <input type="submit" value="créer" class='tprincipal boutonOr button'>
                     </form>
                 </div>
             </div>
         </main>
         <footer>
-            <p>&copy; Pixels & Parchemins 2024</p>
+        <?PHP require_once("part/footer.php"); ?>
         </footer>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
     </body>

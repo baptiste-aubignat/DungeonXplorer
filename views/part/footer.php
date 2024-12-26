@@ -1,0 +1,1 @@
+<p class="has-text-centered">&copy; Pixels & Parchemins 2024</p>

@@ -15,7 +15,7 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/hero/selection">
-                Menu
+                choisir hero
             </a>
         </div>
         <div class="navbar-end pr-6">
