@@ -41,7 +41,7 @@
                         <a class="button boutonOr mr-3 is-medium" href="<?php echo BASE_URL; ?>/inscription">
                             Rejoindre l'Ordre des Aventuriers
                         </a>
-                        <a class="button is-light is-medium" href="<?php echo BASE_URL; ?>/connexion">
+                        <a class="button is-light is-medium" href="<?php echo BASE_URL; ?>/fight">
                             Poursuivre votre Destinée
                         </a>
                     </div>
