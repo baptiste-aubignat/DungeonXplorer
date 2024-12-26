@@ -14,12 +14,12 @@
     </div>
     <div class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/menu">
+            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/hero/selection">
                 Menu
             </a>
         </div>
         <div class="navbar-end pr-6">
-            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/profile">
+            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/account/profile">
                 Profile
             </a>
         </div>

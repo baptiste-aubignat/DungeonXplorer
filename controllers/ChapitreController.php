@@ -1,7 +1,7 @@
 <?php
 class ChapitreController {
 
-    private $nbChap;
+    public $nbChap;
 
     public function setNbChap($id) {
         $this->nbChap = $id;
@@ -16,9 +16,13 @@ class ChapitreController {
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
+        echo "<br>";
+
         while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<br> " . $recu['content'] . "<br>";
+            echo "<p class='is-size-5-desktop is-size-6-tablet'> " . $recu['content'] . "</p>";
         }
+
+        echo "<br>";
 
         $this->getSuite();
 
@@ -34,7 +38,7 @@ class ChapitreController {
 
         $suiteExiste = false;
         while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<a href='".BASE_URL."/chapitre/".$recu['next_chapter_id']."' class='button'>".$recu['description']."</a>";
+            echo "<a href='".BASE_URL."/chapitre/".$recu['next_chapter_id']."' class='button is-size-4-desktop is-size-5-tablet'>".$recu['description']."</a>";
             $suiteExiste = true;
         }
         if (!$suiteExiste) {

@@ -24,7 +24,7 @@ class MenuController {
         $hero = $this->account->getHero($pseudo);
         while ($recu = $hero->fetch(PDO::FETCH_ASSOC)) {
             echo "
-                <div class='cell'>
+                <a class='cell'>
                     <div class='card'>
                         <div class='card-image'>
                             <figure class='image'>
@@ -43,11 +43,11 @@ class MenuController {
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             ";
         }
         echo "
-            <div class='cell'>
+            <a class='cell' href='".BASE_URL."/hero/create'>
                 <div class='card'>
                     <div class='card-image'>
                         <figure class='image'>
@@ -65,7 +65,7 @@ class MenuController {
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         ";
     }
 }

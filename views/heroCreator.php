@@ -32,18 +32,7 @@
         <main>
             <div class="container">
                 <div class="box boxMenu">
-                    <h1>Menu principal</h1>
-                    <div class="texte">
-                        <p>
-                            Poursuivez une aventure déjà commencée ou bien commencez-en une nouvelle !
-                        </p>
-                    </div>
-
-                    <div class="fixed-grid has-1-cols-mobile has-3-cols-tablet has-4-cols-desktop has-5-cols-widescreen">
-                        <div class="grid">
-                            <?php THIS->listHero($_SESSION["user"]);?>
-                        </div>
-                    </div>
+                    <h1>Créateur de personnage</h1>
                 </div>
             </div>
         </main>
