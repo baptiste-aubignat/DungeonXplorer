@@ -39,13 +39,14 @@
                             <?php THIS->listHero($_SESSION["user"]);?>
                         </div>
                     </div>
+                    <p id="information" class="tprincipal is-size-5"></p><br>
+                    <a href="<?php echo BASE_URL; ?>/play" class="button boutonOr is-size-4">Jouer</a>
                 </div>
             </div>
         </main>
         <footer>
             <?PHP require_once("part/footer.php"); ?>
         </footer>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
         <script defer src="<?php echo BASE_URL; ?>/scripts/selectionHero.js"></script>
     </body>

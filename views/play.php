@@ -19,7 +19,7 @@
         <main>
             <?php
                 if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
-                    //pass
+                    echo "panique !! combat";
                 } else {
                     $content = new ChapitreController();
                 }

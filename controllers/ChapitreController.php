@@ -39,7 +39,7 @@ class ChapitreController {
 
         $suiteExiste = false;
         while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<a href='".BASE_URL."/chapitre/".$recu['next_chapter_id']."' class='button is-size-4-desktop is-size-5-tablet'>".$recu['description']."</a>";
+            echo "<a class='button is-size-4-desktop is-size-5-tablet chapitreButton' name='".$recu['next_chapter_id']."'>".$recu['description']."</a>";
             $suiteExiste = true;
         }
         if (!$suiteExiste) {
