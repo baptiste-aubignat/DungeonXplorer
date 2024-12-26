@@ -54,7 +54,7 @@ $router = new Router('DungeonXplorer');
 
 // Ajout des routes
 $router->addRoute('', 'HomeController@index');
-$router->addRoute('hero/selection', 'MenuController@index');
+$router->addRoute('hero/selection', 'HeroSelectionController@index');
 $router->addRoute('hero/create', 'HeroCreatorController@index');
 $router->addRoute('play', 'PlayController@index');
 

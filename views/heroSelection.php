@@ -47,6 +47,7 @@
         <footer>
             <?PHP require_once("part/footer.php"); ?>
         </footer>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
         <script defer src="<?php echo BASE_URL; ?>/scripts/selectionHero.js"></script>
     </body>

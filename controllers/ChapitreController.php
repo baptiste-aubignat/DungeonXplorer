@@ -33,17 +33,18 @@ class ChapitreController {
     }
 
     public function getSuite() {
-        $query = "SELECT * FROM Links where chapter_id = ".$this->nbChap.";";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-
-        $suiteExiste = false;
-        while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<a class='button is-size-4-desktop is-size-5-tablet chapitreButton' name='".$recu['next_chapter_id']."'>".$recu['description']."</a>";
-            $suiteExiste = true;
-        }
-        if (!$suiteExiste) {
-            echo "<a href='".BASE_URL."/chapitre/".($this->nbChap+1)."' class='button'>prochain chapitre</a>";
+        if (isset($_SESSION["combat"]) && $_SESSION["combat"] === true) {
+            echo "<a class='button is-size-4-desktop is-size-5-tablet' href='".BASE_URL."/play'>au combat !</a>";
+        } else {
+            $query = "SELECT * FROM Links where chapter_id = ".$this->nbChap.";";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+    
+            $suiteExiste = false;
+            while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<a class='button is-size-4-desktop is-size-5-tablet chapitreButton' name='".$recu['next_chapter_id']."'>".$recu['description']."</a>";
+                $suiteExiste = true;
+            }
         }
     }
 

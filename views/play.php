@@ -19,10 +19,11 @@
         <main>
             <?php
                 if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
-                    echo "panique !! combat";
+                    $content = new fightController();
                 } else {
                     $content = new ChapitreController();
                 }
+                PLAY->checkCombat();
                 $content->index();
             ?>
             <br><br>
