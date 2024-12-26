@@ -13,6 +13,10 @@ class MenuController {
         }
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
+            if (!isset($_SESSION["user"])) {
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."/account/connexion';</script>";
+                die();
+            }
         }
         if (!defined('THIS')) {
             define('THIS', $this);

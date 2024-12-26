@@ -22,11 +22,7 @@
     <body>
         <header>
             <?PHP
-                if (isset($_SESSION["user"])) {
-                    require_once("part/header.php");
-                } else {
-                    require_once("part/headerOff.php");
-                }
+                require_once("part/header.php");
             ?>
         </header>
         <main>

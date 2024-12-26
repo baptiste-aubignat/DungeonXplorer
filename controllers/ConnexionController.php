@@ -14,7 +14,6 @@ class ConnexionController {
             if ($user) {
                 if ($pass === $user['password']) {
                     $_SESSION['user'] = $user["name"]; // Enregistre l'utilisateur dans la session
-                    Utility::alert("Connexion établie");
                     return true;
                 } else {
                     Utility::alert("Mot de passe incorrect !");
@@ -35,16 +34,15 @@ class ConnexionController {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
             if (isset($_SESSION["user"])) {
-                echo "<script type='text/javascript'>location.href = '".BASE_URL."/menu';</script>";
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."';</script>";
+                die();
+            } else if (isset($_POST['envoiConnexion'])) {
+                $this->connexion($_POST['pseudoMail'], $_POST['password']);
+                //reinitialisation des mots de passe
+                $_POST['password'] = '';
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."';</script>";
                 die();
             }
-        }
-
-        
-        if (isset($_POST['envoiConnexion'])) {
-            $this->connexion($_POST['pseudoMail'], $_POST['password']);
-            //reinitialisation des mots de passe
-            $_POST['password'] = '';
         }
         require_once 'views/connexion.php';
     }
