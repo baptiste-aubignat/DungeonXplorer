@@ -54,8 +54,9 @@ $router = new Router('DungeonXplorer');
 
 // Ajout des routes
 $router->addRoute('', 'HomeController@index');
-$router->addRoute('hero/selection', 'MenuController@index');
+$router->addRoute('hero/selection', 'HeroSelectionController@index');
 $router->addRoute('hero/create', 'HeroCreatorController@index');
+$router->addRoute('play', 'PlayController@index');
 
 $router->addRoute('afficher_bdd', 'AfficherBddController@index');
 
@@ -67,6 +68,7 @@ $router->addRoute('account/connexion', 'ConnexionController@index');
 $router->addRoute('account/profile', 'ProfileController@index');
 $router->addRoute('account/logout', 'LogoutController@index');
 $router->addRoute('fight', 'fightsController@index');
+$router->addRoute('private/tool/ajax', 'Ajax@index');
 $router->addRoute('adminPanel', 'adminPanelController@index');
 
 // Appel de la méthode route

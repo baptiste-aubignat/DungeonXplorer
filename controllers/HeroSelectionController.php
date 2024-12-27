@@ -1,5 +1,5 @@
 <?php
-class MenuController {
+class HeroSelectionController {
 
     private $account;
 
@@ -18,13 +18,13 @@ class MenuController {
                 die();
             } else if (isset($_POST["nom"]) && isset($_POST["classe"])) {
                 $this->createHero();
-                $_POST = array();
             }
+            $_SESSION["combat"] = false;
         }
         if (!defined('THIS')) {
             define('THIS', $this);
         }
-        require_once 'views/menu.php';
+        require_once 'views/heroSelection.php';
     }
 
     public function createHero() {
@@ -68,15 +68,13 @@ class MenuController {
 
         $insertUser = $this->account->conn->prepare("INSERT INTO Hero_list(account_id, hero_id) VALUES(?, ?)");
         $insertUser->execute(array($compte["account_id"], $id_hero["hero_id"]));
-
-        $_POST = array();
     }
 
     public function listHero($pseudo) {
         $hero = $this->account->getHero($pseudo);
         while ($recu = $hero->fetch(PDO::FETCH_ASSOC)) {
             echo "
-                <a class='cell'>
+                <a class='cell choixHero'>
                     <div class='card'>
                         <div class='card-image'>
                             <figure class='image'>
