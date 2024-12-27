@@ -14,12 +14,14 @@
 
     .tsecondaire {
         color: #BFBFBF !important;
-        font-family: "Pirata One", system-ui;
+        font-family: "Roboto", system-ui;
     }
 }
 
 .button {
     font-family: "Pirata One", system-ui;
+    word-wrap: break-word;
+    white-space: initial;
 }
 
 .logo {
@@ -68,7 +70,9 @@
 p {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    /*font-style: normal;*/
+    text-align: justify;
+    text-justify: auto;
     color: #E5E5E5;
 }
 
@@ -150,4 +154,19 @@ footer {
     background-color: #2E2E2E;
     padding: 5px;
     bottom: 0;
+}
+
+.pirata {
+    font-family: "Pirata One", system-ui;
+}
+
+#log {
+    height:100%;
+    width:100%;
+    font-family: "Pirata One", system-ui;
+    overflow:scroll;
+}
+
+.log {
+    background: #2E2E2E !important;
 }

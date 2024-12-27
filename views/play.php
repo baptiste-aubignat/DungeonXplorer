@@ -14,29 +14,20 @@
     </head>
     <body>
         <header>
-            <?PHP
-                if (isset($_SESSION["user"])) {
-                    require_once("part/header.php");
-                } else {
-                    require_once("part/headerOff.php");
-                }
-            ?>
+            <?PHP require_once("part/header.php"); ?>
         </header>
         <main>
-            <div class="container pt-large px-5">
-                <div class="notification bsecondaire has-text-centered">
-                    <figure class="image pb-3">
-                        <img src="<?php echo BASE_URL; ?>/images/Logo.png" alt="logo DungeonXplorer" class="is-rounded grand-logo aligneHaut center">
-                    </figure>
-                    <?php 
-                        if (isset($_SESSION["user"])) {
-                            require_once("part/home.php");
-                        } else {
-                            require_once("part/homeOff.php");
-                        }
-                    ?>
-                </div>
-              </div>
+            <?php
+                if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
+                    $content = new fightController();
+                    $_SESSION["combat"] = false;
+                } else {
+                    $content = new ChapitreController();
+                    PLAY->checkCombat();
+                }
+                $content->index();
+            ?>
+            <br><br>
         </main>
         <footer>
             <?PHP require_once("part/footer.php"); ?>

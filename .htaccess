@@ -2,7 +2,7 @@ RewriteEngine On
 RewriteBase /DungeonXplorer/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule ^ index.php [L]
 
 <Files "param_connexion.php">
     Order Allow,Deny

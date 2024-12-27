@@ -6,15 +6,14 @@ class ConnexionController {
         $this->accountModel = new Account();
     }
 
-    public function connexion($user, $pass) {
-        if (!empty($user) && !empty($pass)) {
-            $user = $this->accountModel->getUserByNameOrEmail($user);
+    public function connexion($name, $pass) {
+        if (!empty($name) && !empty($pass)) {
+            $user = $this->accountModel->getUserByNameOrEmail($name);
             $pass = sha1($pass);
 
             if ($user) {
                 if ($pass === $user['password']) {
-                    $_SESSION['user'] = $user; // Enregistre l'utilisateur dans la session
-                    Utility::alert("Connexion établie");
+                    $_SESSION['user'] = $user["name"]; // Enregistre l'utilisateur dans la session
                     return true;
                 } else {
                     Utility::alert("Mot de passe incorrect !");
@@ -34,13 +33,16 @@ class ConnexionController {
         }
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-        }
-
-        $controller = new ConnexionController();
-        if (isset($_POST['envoiConnexion'])) {
-            $controller->connexion($_POST['pseudoMail'], $_POST['password']);
-            //reinitialisation des mots de passe
-            $_POST['password'] = '';
+            if (isset($_SESSION["user"])) {
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."';</script>";
+                die();
+            } else if (isset($_POST['envoiConnexion'])) {
+                $this->connexion($_POST['pseudoMail'], $_POST['password']);
+                //reinitialisation des mots de passe
+                $_POST['password'] = '';
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."';</script>";
+                die();
+            }
         }
         require_once 'views/connexion.php';
     }

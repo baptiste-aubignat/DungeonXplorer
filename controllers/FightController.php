@@ -1,5 +1,6 @@
 <?php
-class HomeController {
+class fightController {
+
     public function index() {
         if (!defined('BASE_URL')) {
             define('BASE_URL', '/DungeonXplorer');
@@ -7,6 +8,6 @@ class HomeController {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        require_once 'views/home.php';
+        require_once 'views/part/fight.php';
     }
 }
