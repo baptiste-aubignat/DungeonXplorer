@@ -15,12 +15,17 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/hero/selection">
-                choisir hero
+                Choisir Héros
             </a>
         </div>
         <div class="navbar-end pr-6">
             <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/account/profile">
                 Profile
+            </a>
+        </div>
+        <div class="navbar-end pr-6">
+            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/adminPanel">
+                Panneau Administrateur
             </a>
         </div>
     </div>

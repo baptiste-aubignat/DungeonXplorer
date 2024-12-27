@@ -6,6 +6,6 @@
 </p>
 <div class="buttons center pt-5">
     <a class="button boutonOr mr-3 is-medium" href="<?php echo BASE_URL; ?>/hero/selection">
-        Invoquer un héro
+        Invoquer un héros
     </a>
 </div>
