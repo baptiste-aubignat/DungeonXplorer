@@ -48,6 +48,18 @@ class ChapitreController {
         }
     }
 
+    public function reset() {
+        $query = "UPDATE Hero set current_level = 1 where name = '".$_SESSION["hero"]."' and hero_id IN (select hero_id from Hero_list hl join Account a on a.account_id = hl.account_id where a.name = '".$_SESSION["user"]."');";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $query = "UPDATE Hero h set pv = (select c.base_pv from Class c where c.class_id = h.class_id) where name = '".$_SESSION["hero"]."' and hero_id IN (select hero_id from Hero_list hl join Account a on a.account_id = hl.account_id where a.name = '".$_SESSION["user"]."');";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $query = "UPDATE Hero h set mana = (select c.base_mana from Class c where c.class_id = h.class_id) where name = '".$_SESSION["hero"]."' and hero_id IN (select hero_id from Hero_list hl join Account a on a.account_id = hl.account_id where a.name = '".$_SESSION["user"]."');";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+    }
+
 
     public function index() {
         if (!defined('BASE_URL')) {
@@ -61,6 +73,9 @@ class ChapitreController {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $this->setNbChap($stmt->fetch(PDO::FETCH_ASSOC)["chapter_id"]);
+        if ($this->nbChap == 10) {
+            $this->reset();
+        }
         require_once 'views/part/chapitre.php';
     }
 }
