@@ -12,7 +12,7 @@ class Account
 
     public function getUserByNameOrEmail($pseudo)
     {
-        $query = "SELECT account_id, name, email, password FROM Account WHERE name = :pseudo OR email = :pseudo";
+        $query = "SELECT account_id, name, email, password, isAdmin FROM Account WHERE name = :pseudo OR email = :pseudo";
         $stmt = $this->conn->prepare($query);
         $stmt->execute(['pseudo' => $pseudo]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,6 +41,7 @@ class Account
         }
         return $this->info['isAdmin'];
     }
+
 
     public function getHero($pseudo)
     {
