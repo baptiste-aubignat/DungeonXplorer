@@ -6,6 +6,12 @@
 
 Ce projet est une application web « Livre dont vous êtes le héros ». Réalisé avec PHP et MYSQL, ce jeu vous transporte dans un univers médieval de dark fantasy.
 
+## Utilisation de l'application
+
+Malheureusement, nous ne pouvons pas déployer notre projet sur gitHub et nous n'avons pas pu utiliser Filezilla car nous utilisons un hébergeur pour notre base de données.
+Pour utiliser l'application, il faut donc lancer en local un serveur et cloner le projet afin de pouvoir l'utiliser.
+Pour tout problème, n'hésitez pas à nous contacter.
+
 ## :warning:Disclaimer
 
 Ce projet contient du contenu (images) généré par IA. 
