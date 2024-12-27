@@ -8,8 +8,8 @@
                     <div id="mana_hero"></div>
                     <div id="xp_hero"></div>
                 </div>
-                <div class="cell">
-                    <p id="log"></p>
+                <div class="cell" style="height:400px;">
+                    <textarea id="log"></textarea>
                 </div>
                 <div class="cell">
                     <div id="name_monster"></div>
@@ -17,6 +17,10 @@
                     <div id="mana_monster"></div>
                 </div>
             </div>
+        </div>
+        <div>
+            <button type="button" class="button" id="physique" onclick="physique()" disabled>Attaque physique</button>
+            <button type="button" class="button" id="magique" onclick="magique()" disabled>Attaque magique</button>
         </div>
     </div>
 </div>

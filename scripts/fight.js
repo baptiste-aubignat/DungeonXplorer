@@ -1,6 +1,8 @@
 let hero;
 let monster;
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 /**
  * simule le lancé d'un dée de 6 (entre 1 et 6)
  * @returns valeur du dée
@@ -40,16 +42,146 @@ function jeu() {
     let initMonster = monster.calcInitiative();
     addLog("joueur tire " + initHero);
     addLog("monstre tire " + initMonster);
+
+    let playerTurn;
     
     if (initHero > initMonster) {
-        addLog("joueur agit en premier");
+        addLog("=> joueur agit en premier");
+        playerTurn = true;
     } else {
-        addLog("monstre agit en premier");
+        addLog("=> monstre agit en premier");
+        playerTurn = false;
+    }
+    addLog("");
+
+    if (playerTurn == false) {
+        monsterAttaque();
+    } else {
+        document.getElementById("physique").disabled = false;
+        document.getElementById("magique").disabled = false;
     }
 }
 
+function monsterAttaque  () {
+    document.getElementById("physique").disabled = true;
+    document.getElementById("magique").disabled = true;
+
+    let attaq = monster.calcAttaque();
+    let def = hero.calcDefense();
+    addLog("monstre fait " + attaq + " dégâts");
+    addLog("player se defend de " + def);
+    let dmg = attaq - def;
+    if (dmg > 0) {
+        addLog("=> joueur subit " + dmg + " dégâts");
+        hero.takeDamage(dmg);
+        updateData();
+    } else {
+        addLog("=> l'attaque est inefficace !");
+    }
+    addLog("");
+    if (!mort()) {
+        document.getElementById("physique").disabled = false;
+        document.getElementById("magique").disabled = false;
+    }
+}
+
+function physique() {
+    let attaq = hero.calcAttaque();
+    let def = monster.calcDefense();
+    console.log(def);
+    addLog("player fait " + attaq + " dégâts");
+    addLog("monstre se defend de " + def);
+    let dmg = attaq - def;
+    if (dmg > 0) {
+        addLog("=> monstre subit " + dmg + " dégâts");
+        monster.takeDamage(dmg);
+        updateData();
+    } else {
+        addLog("=> l'attaque est inefficace !");
+    }
+    addLog("");
+    if (!mort()) {
+        monsterAttaque();
+    }
+}
+
+function magique() {
+    if (hero.getMana() > 0) {
+        let attaq = hero.calcAttaqueMagique();
+        let def = monster.calcDefense();
+        addLog("player fait " + attaq + " dégâts");
+        addLog("monstre se defend de " + def);
+        let dmg = attaq - def;
+        if (dmg > 0) {
+            addLog("=> monstre subit " + dmg + " dégâts");
+            monster.takeDamage(dmg);
+            updateData();
+        } else {
+            addLog("=> l'attaque est inefficace !");
+        }
+        addLog("");
+        if (!mort()) {
+            monsterAttaque();
+        }
+    } else {
+        alert("pas assez de mana !");
+    }
+}
+
+function mort() {
+    if (monster.isDead()) {
+        addLog("le monstre est mort !");
+        addLog("Felicitation !");
+        monstreMort();
+        return true;
+    } else if (hero.isDead()) {
+        addLog("vous êtes Mort !");
+        addLog("Felicitation !");
+        joueurMort();
+        return true;
+    }
+    return false;
+}
+
+const joueurMort = async() => {
+    document.getElementById("physique").disabled = true;
+    document.getElementById("magique").disabled = true;
+    let query = "update Hero set chapter_id = 10 where hero_id = "+hero.getId()+";";
+    await fetchData(query);
+    await delay(1000);
+    location.replace("/DungeonXplorer/play");
+}
+
+const monstreMort = async() => {
+    document.getElementById("physique").disabled = true;
+    document.getElementById("magique").disabled = true;
+    hero.addXp(monster.getXp());
+    let query = `
+        UPDATE Hero
+        SET chapter_id = (
+            SELECT next_chapter_id
+            FROM (
+                SELECT l.next_chapter_id
+                FROM Hero h
+                JOIN Links l ON l.chapter_id = h.chapter_id
+                WHERE h.hero_id = ${hero.getId()} AND l.next_chapter_id <> 10
+            ) AS derived_table
+        )
+        WHERE hero_id = ${hero.getId()};
+    `;
+    await fetchData(query);
+    query = "update Hero set pv = "+hero.getPv()+" where hero_id = "+hero.getId()+";";
+    await fetchData(query);
+    query = "update Hero set mana = "+hero.getMana()+" where hero_id = "+hero.getId()+";";
+    await fetchData(query);
+    query = "update Hero set xp = "+hero.getXp()+" where hero_id = "+hero.getId()+";";
+    await fetchData(query);
+    await delay(1000);
+    location.replace("/DungeonXplorer/play");
+}
+
 function addLog(info) {
-    document.getElementById("log").innerHTML = document.getElementById("log").innerHTML  + info + "<br>";
+    document.getElementById("log").innerHTML =  info + "\n" + document.getElementById("log").innerHTML;
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

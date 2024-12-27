@@ -20,10 +20,11 @@
             <?php
                 if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
                     $content = new fightController();
+                    $_SESSION["combat"] = false;
                 } else {
                     $content = new ChapitreController();
+                    PLAY->checkCombat();
                 }
-                PLAY->checkCombat();
                 $content->index();
             ?>
             <br><br>

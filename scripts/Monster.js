@@ -13,7 +13,7 @@ class Monster {
      * calcule les dégâts d'une attaque
      * @returns dégâts
      */
-    calcQttaque () {
+    calcAttaque () {
         return dee() + this.strength;
     }
 
@@ -30,7 +30,14 @@ class Monster {
      * @returns défense
      */
     calcDefense () {
-        return dee() + Math.round(this.strength / 2) + this.armor;
+        return dee() + Math.round((this.strength) / 2);
+    }
+
+    takeDamage(dmg) {
+        this.pv -= dmg;
+        if (this.pv < 0) {
+            this.pv = 0;
+        }
     }
     
     toString() {
@@ -63,5 +70,9 @@ class Monster {
 
     getXp() {
         return this.xp;
+    }
+
+    isDead() {
+        return this.pv <= 0;
     }
 }

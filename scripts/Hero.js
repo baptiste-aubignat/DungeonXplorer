@@ -16,8 +16,17 @@ class Hero {
      * calcule les dégâts d'une attaque
      * @returns dégâts
      */
-    calcQttaque () {
+    calcAttaque () {
         return dee() + this.strength + this.bonus_stength;
+    }
+
+    /**
+     * calcule les dégâts d'une attaque
+     * @returns dégâts
+     */
+    calcAttaqueMagique () {
+        this.mana -= 1;
+        return dee() + dee() + 1;
     }
 
     /**
@@ -33,12 +42,24 @@ class Hero {
      * @returns défense
      */
     calcDefense () {
+        let def;
         if (this.class_id == 3) {
             def = this.initiative;
         } else {
             def = this.strength;
         }
         return dee() + Math.round(def / 2) + this.armor;
+    }
+
+    takeDamage(dmg) {
+        this.pv -= dmg;
+        if (this.pv < 0) {
+            this.pv = 0;
+        }
+    }
+
+    addXp(xp) {
+        this.xp += xp;
     }
 
     toString() {
@@ -79,5 +100,9 @@ class Hero {
 
     getXp() {
         return this.xp;
+    }
+
+    isDead() {
+        return this.pv <= 0;
     }
 }
