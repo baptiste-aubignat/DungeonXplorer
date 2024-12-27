@@ -13,24 +13,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-    <header>
-            <?PHP
-                if (isset($_SESSION["user"])) {
-                    require_once("part/header.php");
-                } else {
-                    require_once("part/headerOff.php");
-                }
-            ?>
+        <header>
+            <?PHP require_once("part/header.php"); ?>
         </header>
         <main>
-            <div class="container pt-large px-5">
-                <div class="notification bsecondaire has-text-centered">
-                    <h1 class="is-size-1">Chapitre <?php echo CHAP->nbChap; ?></h1>
-                    <br>
-                    <?php CHAP->getChap(); ?>
-                </div>
-              </div>
-              <br><br>
+            <?php
+                if (isset($_SESSION["combat"]) && $_SESSION["combat"] == true) {
+                    $content = new fightController();
+                    $_SESSION["combat"] = false;
+                } else {
+                    $content = new ChapitreController();
+                    PLAY->checkCombat();
+                }
+                $content->index();
+            ?>
+            <br><br>
         </main>
         <footer>
             <?PHP require_once("part/footer.php"); ?>

@@ -159,3 +159,14 @@ footer {
 .pirata {
     font-family: "Pirata One", system-ui;
 }
+
+#log {
+    height:100%;
+    width:100%;
+    font-family: "Pirata One", system-ui;
+    overflow:scroll;
+}
+
+.log {
+    background: #2E2E2E !important;
+}

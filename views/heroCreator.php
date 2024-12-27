@@ -47,5 +47,6 @@
         <?PHP require_once("part/footer.php"); ?>
         </footer>
         <script defer src="<?php echo BASE_URL; ?>/scripts/script.js"></script>
+        <script defer src="<?php echo BASE_URL; ?>/scripts/creationHero.js"></script>
     </body>
 </html>
