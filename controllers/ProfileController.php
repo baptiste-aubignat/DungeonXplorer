@@ -1,16 +1,14 @@
 <?php
-class ProfileController
-{
+class ProfileController {
 
-    public function index()
-    {
+    public function index() {
         if (!defined('BASE_URL')) {
             define('BASE_URL', '/DungeonXplorer');
         }
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
             if (!isset($_SESSION["user"])) {
-                echo "<script type='text/javascript'>location.href = '" . BASE_URL . "/account/connexion';</script>";
+                echo "<script type='text/javascript'>location.href = '".BASE_URL."/account/connexion';</script>";
                 die();
             }
         }

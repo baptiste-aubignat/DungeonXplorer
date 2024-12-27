@@ -1,12 +1,9 @@
 @media (prefers-color-scheme: dark) {
-
-    html,
-    .bprincipal {
+    html, .bprincipal {
         background: #1A1A1A !important;
     }
 
-    .navbar,
-    .bsecondaire {
+    .navbar, .bsecondaire {
         background: #2E2E2E !important;
     }
 
@@ -40,13 +37,11 @@
 }
 
 .aligneBas {
-    margin-bottom: -25px;
-    /*effet image qui depasse de la navbar*/
+    margin-bottom: -25px; /*effet image qui depasse de la navbar*/
 }
 
 .aligneHaut {
-    margin-top: -120px;
-    /*effet image qui depasse de la navbar*/
+    margin-top: -120px; /*effet image qui depasse de la navbar*/
 }
 
 .boutonOr {
@@ -96,7 +91,7 @@ p {
 
 #mdpNonValide {
     display: none;
-}
+} 
 
 .boxConnexion {
     background: #2E2E2E !important;
@@ -124,21 +119,14 @@ p {
     box-shadow: none !important;
 }
 
-.panelAdmin {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.boxMenu>h1 {
+.boxMenu > h1 {
     font-size: 200%;
     text-align: center;
     color: #E5E5E5;
     font-family: "Pirata One", system-ui;
 }
 
-.boxMenu>p {
+.boxMenu > p {
     color: #E5E5E5;
     text-align: center;
 }
@@ -153,7 +141,7 @@ p {
     margin-bottom: 10px;
 }
 
-.texte>p {
+.texte > p {
     color: #E5E5E5;
     text-align: center;
 }
@@ -172,7 +160,13 @@ footer {
     font-family: "Pirata One", system-ui;
 }
 
-.tableau {
-    align-items: center !important;
-    text-align: center !important;
+#log {
+    height:100%;
+    width:100%;
+    font-family: "Pirata One", system-ui;
+    overflow:scroll;
+}
+
+.log {
+    background: #2E2E2E !important;
 }
