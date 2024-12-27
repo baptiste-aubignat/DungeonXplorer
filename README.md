@@ -36,7 +36,7 @@ Pour tout problème, n'hésitez pas à nous contacter.
 Ce projet contient du contenu (images) généré par IA. 
 
 ## Screenshot de l'Application
-# Pannel administrateur:
+# Pannel administrateur
 ![image](https://github.com/user-attachments/assets/a8faac74-5217-4ae6-948a-452933a5cb86)
 
 # Choix du personnage
