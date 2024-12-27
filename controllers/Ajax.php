@@ -27,6 +27,7 @@ class Ajax {
     public function query($query) {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
+        echo json_encode($stmt->fetch(PDO::FETCH_ASSOC));
     }
 }
 ?>

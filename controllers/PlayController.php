@@ -32,7 +32,6 @@ class PlayController {
         $stmt->execute();
         $_SESSION["combat"] = false;
         if ($stmt->fetch(PDO::FETCH_ASSOC)["nb"] > 0) {
-            echo "tf ?";
             $_SESSION["combat"] = true;
         }
     }
