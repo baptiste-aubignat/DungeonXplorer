@@ -69,7 +69,7 @@ $router->addRoute('account/profile', 'ProfileController@index');
 $router->addRoute('account/logout', 'LogoutController@index');
 $router->addRoute('fight', 'fightsController@index');
 $router->addRoute('private/tool/ajax', 'Ajax@index');
-
+$router->addRoute('adminPanel', 'adminPanelController@index');
 
 // Appel de la méthode route
 $router->route(trim($_SERVER['REQUEST_URI'], '/'));
