@@ -41,7 +41,7 @@ class adminPanelController{
                     $stmt = $conn->prepare($query);
                     $stmt->execute();
                     while($recu = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        echo $recu
+                        echo $recu;
                     }
                     break;
 

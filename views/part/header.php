@@ -19,13 +19,20 @@
             </a>
         </div>
         <div class="navbar-end pr-6">
+            <?php 
+            $conn = Database::connect();
+            $query = "SELECT isAdmin from Account where name = '".$_SESSION["user"]."';";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            $recu = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if($recu['isAdmin'] == 1){
+                echo "<a class='navbar-item tprincipal' href='".BASE_URL."/adminPanel'>Panneau Administrateur</a>";
+            }
+            ?>
+            
             <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/account/profile">
                 Profile
-            </a>
-        </div>
-        <div class="navbar-end pr-6">
-            <a class="navbar-item tprincipal" href="<?php echo BASE_URL; ?>/adminPanel">
-                Panneau Administrateur
             </a>
         </div>
     </div>
