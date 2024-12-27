@@ -13,15 +13,16 @@ class ChapitreController {
     }
 
     public function getChap() {
-        echo "<figure class='image'><img src='".BASE_URL."/images/Chapitre_".$this->nbChap.".png' alt='image du chapitre ".$this->nbChap."'></figure>";
 
         $query = "SELECT * FROM Chapter where chapter_id = ".$this->nbChap.";";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
-        echo "<br>";
+        
 
         while ($recu = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<figure class='image'><img src='".BASE_URL."/images/".$recu['image']."' alt='image du chapitre ".$this->nbChap."'></figure>";
+            echo "<br>";
             echo "<p class='is-size-5-desktop is-size-6-tablet'> " . $recu['content'] . "</p>";
         }
 
